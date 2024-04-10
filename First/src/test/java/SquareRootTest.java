@@ -14,11 +14,10 @@ public class SquareRootTest {
 
     @Test
     void getSquareRoot() {
-//assert squareRoot.getSquareRoot(5,0,5,1e-5);
         assertArrayEquals(squareRoot.solve(5.2, 15.1, 3.0, epsilon), new double[]{-0.2145235681229893, -2.6893225857231644});
 //        тест, который проверяет, что для уравнения x^2+1 = 0 корней нет (возвращается пустой массив)
         assertArrayEquals(squareRoot.solve(1, 0, 1, epsilon), new double[]{});
-//        тест, который проверяет, что для уравнения x^2-1 = 0 корней нет (возвращается пустой массив)
+//        тест, который проверяет, что для уравнения x^2-1 = 0 есть два корня кратности 1 (x1=1, x2=-1)
         assertArrayEquals(squareRoot.solve(1, 0, -1, epsilon), new double[]{1, -1});
 //        тест, который проверяет, что для уравнения x^2+2x+1 = 0 есть один корень кратности 2 (x1= x2 = -1)
         assertArrayEquals(squareRoot.solve(1, 2, 1, epsilon), new double[]{-1, -1});
