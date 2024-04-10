@@ -1,11 +1,12 @@
 
 
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import static java.lang.Math.sqrt;
 import static org.junit.jupiter.api.Assertions.*;
 
-//@SpringBootTest
+@SpringBootTest(classes = SquareRoot.class)
 public class SquareRootTest {
 
     private SquareRoot squareRoot;
