@@ -76,5 +76,4 @@ public class SquareRootTest {
         );
         assertTrue(exception.getMessage().contains("Ошибка, один из коэффициентов является INFINITE"));
     }
-
 }

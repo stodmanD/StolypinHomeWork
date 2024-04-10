@@ -6,7 +6,6 @@ public class SquareRoot {
         if (abs(a) <= e) {
             throw new ArithmeticException("a не должно быть равно 0");
         }
-
         if (Double.isNaN(a) || Double.isNaN(b) || Double.isNaN(c)) {
             throw new ArithmeticException("Ошибка, один из коэффициентов является NAN");
         }
