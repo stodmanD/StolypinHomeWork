@@ -9,7 +9,8 @@ import static org.junit.jupiter.api.Assertions.*;
 public class SquareRootTest {
 
     private SquareRoot squareRoot;
-private double epsilon =1e-11;
+    private double epsilon = 1e-11;
+
     @Test
     void getSquareRoot() {
 //assert squareRoot.getSquareRoot(5,0,5,1e-5);
@@ -23,7 +24,8 @@ private double epsilon =1e-11;
 //        тест, который проверяет, что коэффициент a не может быть равен 0. В этом случае solve выбрасывает исключение
         Throwable exception = assertThrows(
                 ArithmeticException.class,
-                () -> {squareRoot.solve(0, 2, 1, epsilon);
+                () -> {
+                    squareRoot.solve(0, 2, 1, epsilon);
                 }
         );
         assertTrue(exception.getMessage().contains("a не должно быть равно 0"));
@@ -32,38 +34,44 @@ private double epsilon =1e-11;
 //        тест, который проверяет, что коэффициенты не могут быть NAN. В этом случае solve выбрасывает исключение
         exception = assertThrows(
                 ArithmeticException.class,
-                () -> {squareRoot.solve(1, sqrt(-1), 1, epsilon);
+                () -> {
+                    squareRoot.solve(1, sqrt(-1), 1, epsilon);
                 }
         );
         assertTrue(exception.getMessage().contains("Ошибка, один из коэффициентов является NAN"));
         exception = assertThrows(
                 ArithmeticException.class,
-                () -> {squareRoot.solve(sqrt(-1), 1, 1, epsilon);
+                () -> {
+                    squareRoot.solve(sqrt(-1), 1, 1, epsilon);
                 }
         );
         assertTrue(exception.getMessage().contains("Ошибка, один из коэффициентов является NAN"));
         exception = assertThrows(
                 ArithmeticException.class,
-                () -> {squareRoot.solve(1, 1, sqrt(-1), epsilon);
+                () -> {
+                    squareRoot.solve(1, 1, sqrt(-1), epsilon);
                 }
         );
         assertTrue(exception.getMessage().contains("Ошибка, один из коэффициентов является NAN"));
 //        тест, который проверяет, что коэффициенты не могут быть INFINITE. В этом случае solve выбрасывает исключение
         exception = assertThrows(
                 ArithmeticException.class,
-                () -> {squareRoot.solve(1, (1.0/0.0), 1, epsilon);
+                () -> {
+                    squareRoot.solve(1, (1.0 / 0.0), 1, epsilon);
                 }
         );
         assertTrue(exception.getMessage().contains("Ошибка, один из коэффициентов является INFINITE"));
         exception = assertThrows(
                 ArithmeticException.class,
-                () -> {squareRoot.solve((1.0/0.0), 1, 1, epsilon);
+                () -> {
+                    squareRoot.solve((1.0 / 0.0), 1, 1, epsilon);
                 }
         );
         assertTrue(exception.getMessage().contains("Ошибка, один из коэффициентов является INFINITE"));
         exception = assertThrows(
                 ArithmeticException.class,
-                () -> {squareRoot.solve(1, 1, (1.0/0.0), epsilon);
+                () -> {
+                    squareRoot.solve(1, 1, (1.0 / 0.0), epsilon);
                 }
         );
         assertTrue(exception.getMessage().contains("Ошибка, один из коэффициентов является INFINITE"));
